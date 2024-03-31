@@ -1,0 +1,38 @@
+{
+    "name": "brace/tpl-login",
+    "type": "project",
+    "description": "Templates for Login, Registration, Consent and Password Reset",
+    "keywords": ["Phore", "Dependency Injection", "Di"],
+    "homepage": "https://infracamp.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthias Leuffen",
+            "email": "matthes@leuffen.de"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "phore/filesystem": "*"
+    },
+
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Brace\\Tpl\\Login\\": "src"
+        },
+        "files": [
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+
+        "branch-alias": {
+        }
+    }
+}
