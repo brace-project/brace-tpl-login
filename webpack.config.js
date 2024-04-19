@@ -1,9 +1,8 @@
 ﻿const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
-        'src/tpl/login/index.ts': 'src/tpl/login/index_gen.js'
+        './src/tpl/_build/loginV1': './src/tpl/login/loginV1.ts'
     },
     cache: true,
     module: {
@@ -18,10 +17,9 @@ module.exports = {
                         }
                     }
                 ],
+                exclude: [
 
-                include: [
-                    path.resolve(__dirname, "src"),
-                    path.resolve(__dirname, "workspaces")
+                    path.resolve(__dirname, "node_modules"),
                 ]
             },
             {
@@ -32,16 +30,9 @@ module.exports = {
             {
                 test: /\.(scss|css)$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    {
+                    'style-loader', 'css-loader', 'sass-loader'],
 
-                        loader: 'css-loader',
-                        options: {
-                            url: false // don't complain about url() in css
-                        }
-
-                    }, 'sass-loader'],
-                include: path.resolve(__dirname, "")
+                exclude: path.resolve(__dirname, "./node_modules"),
             },
 
 
@@ -51,11 +42,11 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     devtool: 'source-map',
-    mode: "development",
-    //mode: "production",
+    //mode: "development",
+    mode: "production",
 
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '/'),
+        path: path.resolve(__dirname, "./"),
     },
 };
