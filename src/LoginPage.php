@@ -16,8 +16,10 @@ class LoginPage
          * @var string
          */
         private string $styleCss = "",
+        
         private string $actionUrl = "",
-        private string $csrfToken = ""
+        private string $csrfToken = "",
+        private string $styleSheetUrl = ""
     )
     {
     }
@@ -31,6 +33,7 @@ class LoginPage
             "styleCss" => $this->styleCss,
             "actionUrl" => $this->actionUrl,
             "csrfToken" => $this->csrfToken,
+            "styleSheetUrlTag" => $this->styleSheetUrl ? "<link rel='stylesheet' href='$this->styleSheetUrl'>" : "",
             "errorMsg" => $errorMsg
         ]);
     }
